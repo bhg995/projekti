@@ -1,0 +1,14 @@
+[Interface]
+Address = 10.0.0.1/24
+PrivateKey = {{ salt['cmd.run']('cat /etc/wireguard/privatekey') }}
+ListenPort = 51820
+PostUp = iptables -A FORWARD -i wg0 -j ACCEPT; iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+PostDown = iptables -D FORWARD -i wg0 -j ACCEPT; iptables -t nat -D POSTROUTING -o eth0 -j MASQUERADE
+
+[Peer]
+PublicKey = {{ salt['cmd.run']('cat /etc/wireguard/publickey') }}
+AllowedIPs = 10.0.0.2/32
+
+[Peer]
+PublicKey = {{ salt['cmd.run']('cat /etc/wireguard/publickey') }}
+AllowedIPs = 10.0.0.3/32
