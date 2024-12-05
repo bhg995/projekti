@@ -6,7 +6,7 @@ install_wireguard:
 generate_keys:
   cmd.run:
     - name: |
-        umask 077
+        umask 022
         mkdir -p /etc/wireguard
         [ ! -f /etc/wireguard/privatekey ] && wg genkey | tee /etc/wireguard/privatekey | wg pubkey > /etc/wireguard/publickey
     - unless: test -f /etc/wireguard/privatekey
