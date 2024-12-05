@@ -1,12 +1,15 @@
+
 #!/bin/bash
 set -e
 
-apt-get update
-apt-get upgrade
-apt-get install -y salt-master salt-minion
+echo "Updating the system and installing Salt..."
+sudo apt-get update
+sudo apt-get upgrade -y
+sudo apt-get install -y salt-common wireguard qrencode
 
-cp -r salt /srv/salt
-cp top.sls /srv/salt/top.sls
+echo "Setting up Salt States..."
+sudo mkdir -p /srv/salt
+sudo cp -r salt/* /srv/salt/
 
-systemctl enable salt-master
-systemctl start salt-master
+echo "Applying Salt States..."
+sudo salt-call --local state.apply
