@@ -10,7 +10,9 @@
 
 ### Agenda
 
-**The plan was to make very simple wireguard test environment with Linux**
+**The plan was to make very simple wireguard ~~test environment~~ server with Linux**
+
+**UPDATED: Very simple wireguard server** 5.12.2024
 
 <hr>
 <br>
