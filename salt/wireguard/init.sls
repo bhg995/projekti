@@ -17,8 +17,3 @@ configure_wireguard:
     - source: salt://wireguard/wg0.conf.jinja
     - mode: 600
     - template: jinja
-
-start_wireguard:
-  service.running:
-    - name: wg-quick@wg0
-    - enable: True
