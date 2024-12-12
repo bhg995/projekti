@@ -122,7 +122,7 @@ then on the **server** capture the traffic
 
 ```
 sudo tcpdump -envi wg0 host 8.8.8.8
-``
+```
 
 
 <hr>
