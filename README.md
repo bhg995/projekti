@@ -20,6 +20,8 @@
 
 Make sure you have Master-minion architecture set up
 
+[Manual installation](https://github.com/bhg995/paha/blob/main/h4.md), in finnish.
+
 Start by download the script
 ```bash
 	$ git clone https://github.com/bhg995/projekti.git
