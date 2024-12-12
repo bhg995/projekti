@@ -110,19 +110,17 @@ $ sudo wg set wg0 peer 4396+c2RFzYlkm2kDbwNxm8RmfQiC5DY/BiA7dHuOWs= allowed-ips 
 ```
 
 
-Test connection
+**TEST**
 
-	$ ping 1.1.1.1 #itself
- 
- ![firstTest](https://github.com/bhg995/paha/blob/main/ias/1.1.1.1.png?raw=true)
- 
- 	$ ping 8.8.8.8 #google
+**on the client**
 
-![secondTest](https://github.com/bhg995/paha/blob/main/ias/8.8.8.8.png?raw=true)
+ping 8.8.8.8
 
-You should have wireguard server ready to serve clients. You can edit those clients in under `[Peer]` in the `/etc/wireguard/wg0.conf` configuration file.
+then on the **server** capture the traffic
 
-[Vagrant](https://developer.hashicorp.com/vagrant/install) is great for testing this.
+```
+sudo tcpdump -envi wg0 host 8.8.8.8
+``
 
 
 <hr>
