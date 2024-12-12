@@ -12,7 +12,7 @@
 
 **Simple server Wireguard server configuration with salt**
 
-**UPDATED: Very simple wireguard server** 5.12.2024
+**UPDATED: Very simple wireguard client installation and configuration** 5.12.2024
 
 <hr>
 <br>
